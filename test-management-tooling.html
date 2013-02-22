@@ -44,14 +44,18 @@
     
     GitHub's [Repository status API](http://developer.github.com/v3/repos/statuses/) allows integration of third party services to verify if a Pull Request meets certain requirements (more info on [GitHub's related blog post](https://github.com/blog/1227-commit-status-api)). This allows automating a number of tasks for reviewers, such as verifying whether the contributor has signed the CLA.
     
-    The results of running these tools needs to be archived.
+    The results of running these tools needs to be archived and available online.
     
-    Ideally, the built infrastructure should make adding news such tools easy.
+    The ideal solution consists in a small infrastructure which makes it easy to add more such tools in a declarative manner as requirements change.
+    
+    This infrastructure would abstract all communication with GitHub's API and handle the presentation layer, so that tools would simply consist of a name and a script/function returning a status of pending, success, error, or failure.
+    
+    The following are a non-exhaustive list of such tools.
     
     Has the CLA been signed?
     ------------------------
     
-    Check that the commit authors have all signed the CLA (data will be available through some for of API).
+    Check that the commit authors have all signed the CLA (data will be available through some form of API).
     
     Is meta data present and correct?
     ---------------------------------
